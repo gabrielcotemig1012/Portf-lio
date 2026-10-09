@@ -1,0 +1,551 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    min-height: 100vh;
+    color: white;
+    background: #000;
+}
+
+body.claro {
+    color: #000;
+    background: #fff;
+}
+
+#fundo-das-bolhas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid #444;
+    background-color: rgba(60, 60, 60, 0.8);
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 50px;
+}
+
+.menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.claro .menu {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #aab;
+}
+
+body.claro .menu a {
+    color: #000;
+}
+
+#botao-sol-lua {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#comeco {
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.nome h1 {
+    font-family: "Island Moments", cursive;
+    font-weight: 400;
+    font-size: 18vw;
+    line-height: 0.85;
+    color: white;
+}
+
+body.claro .nome h1 {
+    color: black;
+}
+
+section {
+    padding: 100px 20px 0 20px;
+}
+
+.caixa {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 22px;
+    background-color: #050507;
+    color: white;
+    border: 1px solid #555;
+    border-radius: 14px;
+}
+
+.titulo {
+    font-family: "Inter Tight", "Inter", sans-serif;
+    letter-spacing: -0.03em;
+    font-size: 30px;
+    margin-bottom: 14px;
+}
+
+.verde {
+    color: white;
+    text-align: center;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: white;
+    margin-bottom: 25px;
+}
+
+.hr-verde {
+    background-color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.sobre img {
+    width: 450px;
+    max-width: 100%;
+    height: 340px;
+    object-fit: cover;
+    border-radius: 22px;
+}
+
+.sobre p {
+    flex: 1;
+    min-width: 280px;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.linha-tempo {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding-bottom: 20px;
+}
+
+.linha {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    background-color: white;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.item.esquerda {
+    flex-direction: row-reverse;
+}
+
+.bolinha {
+    position: absolute;
+    top: 14px;
+    left: 50%;
+    width: 14px;
+    height: 14px;
+    margin-left: -7px;
+    border-radius: 50%;
+    background-color: #2b3445;
+    border: 2px solid white;
+}
+
+.data,
+.card {
+    width: 45%;
+}
+
+.data {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.data.direita {
+    justify-content: flex-end;
+}
+
+.ano {
+    font-family: "Inter Tight", "Inter", sans-serif;
+    letter-spacing: -0.03em;
+    font-size: 30px;
+    font-weight: 700;
+    font-variant-numeric: lining-nums;
+}
+
+.ano.inicio {
+    color: white;
+}
+
+.ano.fim {
+    color: #8a93a3;
+}
+
+.risco {
+    width: 1px;
+    height: 32px;
+    background-color: #8a93a3;
+}
+
+.card {
+    background-color: #1f2733;
+    border: 1px solid #444c5a;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card h3 {
+    font-family: "Inter Tight", "Inter", sans-serif;
+    letter-spacing: -0.03em;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+    margin-bottom: 14px;
+}
+
+.escola {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.descricao {
+    font-size: 13px;
+    text-align: center;
+    margin-top: 12px;
+    color: #d3d9e3;
+}
+
+.projetos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.projeto {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 240px;
+    padding: 24px;
+    background-color: #1f2733;
+    border: 1px solid #444c5a;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.projeto:hover {
+    border-color: white;
+    background-color: #2b3445;
+}
+
+.projeto h3 {
+    font-family: "Inter Tight", "Inter", sans-serif;
+    letter-spacing: -0.03em;
+    font-size: 24px;
+    text-align: center;
+}
+
+.projeto p {
+    font-size: 14px;
+    text-align: center;
+    color: #d3d9e3;
+}
+
+.projeto span {
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+}
+
+#fala-comigo {
+    padding-bottom: 120px;
+}
+
+#botao-descer {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    margin-left: -26px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1px solid #666;
+    background-color: rgba(60, 60, 60, 0.9);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+#botao-descer:hover {
+    background-color: #555;
+}
+
+#quem-sou-eu .caixa {
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#minha-historia {
+    padding-top: 0;
+    scroll-margin-top: 100px;
+}
+
+#minha-historia .caixa {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#meus-sites .caixa,
+#fala-comigo .caixa {
+    background-color: transparent;
+    border: none;
+    color: inherit;
+}
+
+#meus-sites .titulo,
+#fala-comigo .titulo {
+    color: inherit;
+}
+
+#meus-sites hr,
+#fala-comigo hr {
+    background-color: currentColor;
+    opacity: 0.5;
+}
+
+.projeto {
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.projeto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
+}
+
+.contatos {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.contato-link,
+.whatsapp {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 24px;
+    background-color: #1f2733;
+    border: 1px solid #444c5a;
+    border-radius: 10px;
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contato-link {
+    height: 150px;
+}
+
+.whatsapp {
+    margin-top: 20px;
+    height: 120px;
+}
+
+.contato-link:hover,
+.whatsapp:hover {
+    border-color: white;
+    background-color: #2b3445;
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6);
+}
+
+.contato-link h3,
+.whatsapp h3 {
+    font-family: "Inter Tight", "Inter", sans-serif;
+    letter-spacing: -0.03em;
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.contato-link p,
+.whatsapp p {
+    font-size: 14px;
+    color: #d3d9e3;
+}
+
+.github
+{
+    width: 200px;
+}
+
+.insta
+{
+    width: 100px;
+}
+
+.zap
+{
+    width: 50px;
+}
+
+@media (max-width: 700px) {
+    .contatos {
+        grid-template-columns: 1fr;
+    }
+}
+
+h1, h2, h3 {
+    font-family: "Inter Tight", "Inter", sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.nome h1 {
+    font-family: "Island Moments", cursive;
+    font-weight: 400;
+    letter-spacing: normal;
+}
+
+section {
+    padding-top: 180px;
+}
+
+#minha-historia {
+    padding-top: 0;
+}
+
+#fala-comigo {
+    padding-bottom: 160px;
+}
+
+.hr-verde {
+    margin-bottom: 56px;
+}
+
+.projetos {
+    gap: 32px;
+}
+
+.projeto {
+    height: 340px;
+    padding: 36px;
+    border-radius: 16px;
+    background: linear-gradient(145deg, #273244, #1a212c);
+}
+
+.projeto h1 {
+    font-size: 40px;
+    line-height: 1.1;
+}
+
+.projeto span {
+    align-self: flex-start;
+    padding: 12px 24px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    font-size: 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.projeto:hover span {
+    background-color: white;
+    color: #1a212c;
+}
+
+.projeto:last-child {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc((100% - 32px) / 2);
+}
+
+@media (max-width: 700px) {
+    section {
+        padding-top: 120px;
+    }
+
+    .projeto {
+        height: 280px;
+    }
+
+    .projeto:last-child {
+        width: 100%;
+    }
+}
+
+#meus-sites {
+    padding-bottom: 120px;
+}
+
+#fala-comigo {
+    min-height: 100vh;
+    padding-top: 260px;
+    padding-bottom: 180px;
+}
+
+@media (max-width: 700px) {
+    #fala-comigo {
+        padding-top: 200px;
+    }
+}
